@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="bloqueinicial">
+        <img src="imagenes/logo.svg" alt="logo de alura" />
+      </div>
+      <div class="bloquemedio">
+        <section>
+          <textarea
+            name="ingreso"
+            id="texto"
+            cols="30"
+            rows="10"
+            wrap="soft"
+            placeholder="Ingrese su texto aqui"
+          ></textarea>
+        </section>
+        <section>
+          <div class="mensaje">
+            <img src="imagenes/signoalerta.svg" alt="signo de alerta" />
+            <p>Solo letras minusculas y sin acentos</p>
+          </div>
+          <div class="botones">
+            <input type="button" id="encriptar" value="Encriptar" />
+            <input type="button" id="desencriptar" value="Desencriptar" />
+          </div>
+        </section>
+      </div>
+      <div class="bloqueresultado">
+        <div class="superior">
+          <textarea id="salida" cols="30" rows="17" wrap="soft"></textarea>
+          <img
+            src="imagenes/muneco.svg"
+            alt="muñeco buscando con una lupa"
+            id="imagenmuneco"
+          />
+          <p class="textonoencontrado" id="textonoencontrado">
+            Ningún mensaje fue encontrado
+          </p>
+          <p class="ingresetexto" id="ingresetexto">
+            Ingrese el texto que desee encriptar o desencriptar.
+          </p>
+        </div>
+        <div class="inferior">
+          <input type="button" id="copiar" value="Copiar" />
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
