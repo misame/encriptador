@@ -50,7 +50,7 @@ main {
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 30%;
+  margin-top: 26%;
 }
 
 .mensaje p {
@@ -99,13 +99,13 @@ main {
 }
 
 .bloqueresultado {
-  height: 95%;
+  height: 100%;
   flex: 1 1 auto;
   display: block;
 }
 
 .fondo {
-  height: 98%;
+  height: 95%;
   width: 90%;
   border-radius: 32px;
   margin: 5% auto;
@@ -120,7 +120,7 @@ main {
   font-weight: 400;
   font-size: 24px;
   line-height: 150%;
-  color: #0a3871;
+  color: #495057;
   resize: none;
   border: none;
   outline: none;
@@ -169,4 +169,101 @@ main {
   text-align: center;
   color: #0a3871;
   visibility: hidden;
+}
+
+@media screen and (max-width: 1440px) {
+  .mensaje {
+    margin-top: 16%;
+  }
+
+  #copiar {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .mensaje {
+    margin-top: 0%;
+  }
+
+  #salida {
+    height: 70%;
+  }
+
+  #copiar {
+    margin-top: 0%;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  main {
+    flex-direction: column;
+  }
+
+  .bloqueinicial {
+    text-align: left;
+    flex: 0 0;
+  }
+
+  .bloqueinicial img {
+    margin-top: 10%;
+    margin-left: 5%;
+    padding-top: 0%;
+  }
+
+  .bloquemedio {
+    flex: 1 0;
+  }
+
+  .bloqueresultado {
+    height: 0%;
+    flex: 1 0;
+  }
+
+  .fondo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 60%;
+    margin: 10% auto;
+  }
+
+  #salida {
+    margin: 2% auto;
+  }
+
+  .fondo img {
+    display: none;
+  }
+
+  #textonoencontrado {
+    padding-top: 20%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #texto {
+    font-size: 1em;
+  }
+
+  .mensaje p {
+    font-size: 0.5em;
+  }
+
+  #encriptar {
+    font-size: 0.9em;
+  }
+
+  #desencriptar {
+    font-size: 0.9em;
+  }
+
+  #textonoencontrado {
+    font-size: 1em;
+    padding-top: 10%;
+  }
+
+  #ingresetexto {
+    font-size: 0.6em;
+  }
 }
