@@ -81,7 +81,9 @@ main {
   color: #ffffff;
   flex: 1 1 auto;
 }
-
+#encriptar:hover {
+  cursor: pointer;
+}
 #desencriptar {
   background: #d8dfe8;
   height: 67px;
@@ -96,6 +98,10 @@ main {
   flex: 1 1 auto;
 }
 
+#desencriptar:hover {
+  cursor: pointer;
+}
+
 .bloqueresultado {
   flex: 1 1 auto;
   display: block;
@@ -108,6 +114,7 @@ main {
   margin: 5% auto;
   text-align: center;
   background: #ffffff;
+  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
 }
 
 #salida {
@@ -168,7 +175,9 @@ main {
   color: #0a3871;
   visibility: hidden;
 }
-
+#copiar:hover {
+  cursor: pointer;
+}
 footer {
   text-align: center;
   margin-top: 5%;
