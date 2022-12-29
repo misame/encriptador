@@ -1,8 +1,11 @@
 html,
-body,
-main {
+body {
   height: 100%;
   background: #f3f5fc;
+}
+
+main {
+  height: 95%;
 }
 
 textarea,
@@ -172,17 +175,35 @@ main {
 }
 
 footer {
-  background: aqua;
   text-align: center;
+  height: 5%;
+}
+
+footer p {
+  font-size: 0.8em;
+  color: #0a3871;
 }
 
 @media screen and (max-width: 1440px) {
+  html,
+  body,
+  main,
+  .bloquemedio,
+  .bloqueresultado,
+  .bloqueinicial {
+    height: unset;
+  }
+
   .mensaje {
-    margin-top: 16%;
+    margin-top: 0%;
   }
 
   #copiar {
     margin-top: 5%;
+  }
+
+  footer {
+    margin-top: 2%;
   }
 }
 
@@ -243,6 +264,14 @@ footer {
 
   #textonoencontrado {
     padding-top: 20%;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  html,
+  body,
+  main {
+    height: unset;
   }
 }
 
