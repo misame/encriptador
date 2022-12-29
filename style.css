@@ -154,7 +154,7 @@ main {
 
 #copiar {
   position: relative;
-  margin-top: 29%;
+  margin-top: 18%;
   width: 80%;
   height: 67px;
   border: 1px solid #0a3871;
@@ -170,7 +170,7 @@ main {
 
 footer {
   text-align: center;
-  margin-top: 2%;
+  margin-top: 5%;
 }
 
 footer p {
@@ -197,7 +197,7 @@ footer p {
   }
 
   footer {
-    margin-top: 2%;
+    margin-top: 14%;
   }
 }
 
@@ -293,5 +293,11 @@ footer p {
 
   #ingresetexto {
     font-size: 0.6em;
+  }
+
+  @media screen and (max-width: 320px) {
+    footer {
+      margin-top: 45%;
+    }
   }
 }
