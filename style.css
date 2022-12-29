@@ -112,6 +112,7 @@ main {
 
 #salida {
   font-style: normal;
+  height: 66%;
   margin-top: 20%;
   width: 80%;
   font-weight: 400;
@@ -154,7 +155,7 @@ main {
 
 #copiar {
   position: relative;
-  margin-top: 18%;
+  margin-top: 10%;
   width: 80%;
   height: 67px;
   border: 1px solid #0a3871;
@@ -192,6 +193,10 @@ footer p {
     margin-top: 0%;
   }
 
+  #salida {
+    height: 57%;
+  }
+
   #copiar {
     margin-top: 5%;
   }
@@ -207,11 +212,20 @@ footer p {
   }
 
   #salida {
-    height: 70%;
+    height: 64%;
   }
 
   #copiar {
     margin-top: 0%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #salida {
+    height: 66%;
+  }
+  footer {
+    margin-top: 14%;
   }
 }
 
@@ -261,11 +275,20 @@ footer p {
   }
 }
 
-@media screen and (min-width: 375px) and (max-width: 425px) {
+@media screen and (max-width: 375px) and (max-width: 425px) {
   html,
   body,
   main {
     height: unset;
+  }
+
+  .botones {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  #desencriptar {
+    margin-top: 2%;
   }
 }
 
@@ -296,6 +319,14 @@ footer p {
   }
 
   @media screen and (max-width: 320px) {
+    .botones {
+      flex-direction: column;
+      align-items: unset;
+    }
+
+    #desencriptar {
+      margin-top: 2%;
+    }
     footer {
       margin-top: 45%;
     }
