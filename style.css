@@ -50,7 +50,7 @@ main {
   display: flex;
   margin-left: 10%;
   margin-right: 10%;
-  margin-top: 26%;
+  margin-top: 15%;
 }
 
 .mensaje p {
@@ -169,6 +169,11 @@ main {
   text-align: center;
   color: #0a3871;
   visibility: hidden;
+}
+
+footer {
+  background: aqua;
+  text-align: center;
 }
 
 @media screen and (max-width: 1440px) {
