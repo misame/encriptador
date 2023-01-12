@@ -8,6 +8,189 @@ p,
 button {
   font-family: "Inter", sans-serif;
 }
+
+main {
+  display: flex;
+}
+.bloqueinicial {
+  flex: 0.5 1 auto;
+  text-align: right;
+}
+.bloqueinicial img {
+  margin-top: 10ch;
+}
+.bloquemedio {
+  flex: 2 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+#texto {
+  font-weight: 400;
+  font-size: 1.8em;
+  line-height: 150%;
+  margin-top: 6ch;
+  margin-left: 10%;
+  background: #f3f5fc;
+  color: #0a3871;
+  resize: none;
+  border: none;
+  outline: none;
+}
+#texto::placeholder {
+  color: #0a3871;
+}
+.mensaje {
+  display: flex;
+  margin: 0 auto;
+  /**margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 10ch;**/
+}
+
+.mensaje img {
+  margin-left: 10ch;
+}
+
+.mensaje p {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 150%;
+  padding: 0.5em;
+  color: #495057;
+  opacity: 0.8;
+}
+
+.botones {
+  display: flex;
+  margin-left: 10%;
+  margin-right: 10%;
+  gap: 5%;
+  align-items: center;
+}
+#encriptar {
+  background: #0a3871;
+  height: 67px;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  flex: 1 1 auto;
+}
+
+#desencriptar {
+  background: #d8dfe8;
+  height: 67px;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  border-color: #0a3871;
+  color: #0a3871;
+  flex: 1 1 auto;
+}
+.bloqueresultado {
+  flex: 1 1 auto;
+  display: block;
+
+  padding-top: 5ch;
+}
+.fondo {
+  border-radius: 32px;
+  margin: 0 auto;
+  text-align: center;
+  background: #ffffff;
+  display: block;
+}
+
+.fondo img {
+  display: block;
+  width: 50%;
+  height: 50%;
+  margin: 0 auto;
+  padding-top: 40%;
+}
+#salida {
+  font-style: normal;
+  height: 66%;
+  margin: 0 auto;
+  width: 80%;
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 150%;
+  color: #495057;
+  resize: none;
+  border: none;
+  outline: none;
+  display: none;
+}
+
+#textonoencontrado {
+  font-style: normal;
+  font-weight: 700;
+  margin-top: 5%;
+  font-size: 1.4em;
+  line-height: 120%;
+  text-align: center;
+  color: #343a40;
+  display: block;
+}
+
+#ingresetexto {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+  display: block;
+}
+#copiar {
+  position: relative;
+  margin-top: 11%;
+  width: 80%;
+  height: 67px;
+  border: 1px solid #0a3871;
+  border-radius: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #0a3871;
+  visibility: hidden;
+}
+footer {
+  display: block;
+  text-align: center;
+  margin-top: 5ch;
+}
+footer p {
+  font-size: 0.8em;
+  color: #0a3871;
+}
+
+@media screen and (max-width: 768) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/**html,
+body {
+  background: #f3f5fc;
+}
+
+textarea,
+p,
+button {
+  font-family: "Inter", sans-serif;
+}
 main {
   display: flex;
 }
@@ -332,3 +515,4 @@ footer p {
     }
   }
 }
+**/
