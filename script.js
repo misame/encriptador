@@ -31,6 +31,7 @@ function encriptarboton() {
         document.getElementById("salida").value = textosalida;
       } else {
         document.getElementById("salida").style.display = "inline";
+        document.getElementById("copiar").style.display = "block";
         document.getElementById("copiar").style.visibility = "visible";
         document.getElementById("imagenmuneco").style.display = "none";
         document.getElementById("textonoencontrado").remove();
@@ -69,8 +70,9 @@ function descencriptarboton() {
 }
 
 function copiarboton() {
-  document.getElementById("texto").value =
-    document.getElementById("salida").value;
+  const s = document.getElementById("salida").value;
+  document.getElementById("texto").value = s;
+  navigator.clipboard.writeText(s);
   document.getElementById("salida").value = "";
 }
 
