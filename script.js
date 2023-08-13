@@ -1,98 +1,67 @@
-function encriptarboton() {
-  let textoentrada = document.getElementById("texto").value.trim();
-  let textocadena = textoentrada.split(" ");
-  let palabracadena;
-  let cadenafinal = [];
-  let textosalida;
-  if (!contieneMayusculas(textoentrada) && !contieneAcentos(textoentrada)) {
-    for (let i = 0; i < textocadena.length; i++) {
-      palabracadena = textocadena[i];
-      if (palabracadena.includes("e") && !palabracadena.includes("enter")) {
-        palabracadena = palabracadena.replace(/e/g, "enter");
-      }
-      if (palabracadena.includes("i") && !palabracadena.includes("imes")) {
-        palabracadena = palabracadena.replace(/i/g, "imes");
-      }
-      if (palabracadena.includes("a") && !palabracadena.includes("ai")) {
-        palabracadena = palabracadena.replace(/a/g, "ai");
-      }
-      if (palabracadena.includes("o") && !palabracadena.includes("ober")) {
-        palabracadena = palabracadena.replace(/o/g, "ober");
-      }
-      if (palabracadena.includes("u") && !palabracadena.includes("ufat")) {
-        palabracadena = palabracadena.replace(/u/g, "ufat");
-      }
-      cadenafinal.push(palabracadena);
-    }
-    textosalida = cadenafinal.join(" ");
-    if (textosalida != null && textosalida != " ") {
-      const visible = document.getElementById("copiar").style.visibility;
-      if (visible === "visible") {
-        document.getElementById("salida").value = textosalida;
-      } else {
-        document.getElementById("salida").style.display = "inline";
-        document.getElementById("copiar").style.display = "block";
-        document.getElementById("copiar").style.visibility = "visible";
-        document.getElementById("imagenmuneco").style.display = "none";
-        document.getElementById("textonoencontrado").remove();
-        document.getElementById("ingresetexto").remove();
-        document.getElementById("salida").value = textosalida;
-      }
-    }
-  } else {
-    alert("Escriba en minusculas y sin acentos");
-  }
+const BTN_ENCRIPTAR = document.getElementById('encriptar');
+const BTN_DESENCRIPTAR = document.getElementById('desencriptar');
+const TEXTO_ENTRADA = document.getElementById('texto');
+const TEXTO_SALIDA = document.getElementById('salida');
+const BTN_COPIAR = document.getElementById('copiar');
+const IMAGEN = document.getElementById("imagenmuneco");
+const TEXTO_NO_ENCONTRADO = document.getElementById("textonoencontrado");
+const INGRESE_TEXTO = document.getElementById("ingresetexto");
+
+TEXTO_ENTRADA.addEventListener('input', () => {
+  TEXTO_ENTRADA.value = TEXTO_ENTRADA.value.toLowerCase().replace(/[^a-z\s]/g, '');
+});
+
+BTN_ENCRIPTAR.addEventListener('click', () => {
+  const texto = TEXTO_ENTRADA.value;
+  const textoEncriptado = encriptarTexto(texto);
+  mostrarResultado(textoEncriptado);
+  TEXTO_SALIDA.value = textoEncriptado;
+});
+
+BTN_DESENCRIPTAR.addEventListener('click', () =>{
+  const textoEncriptado = TEXTO_ENTRADA.value;
+  const textoDesencriptado = desencriptarTexto(textoEncriptado);
+  TEXTO_SALIDA.value = textoDesencriptado;
+});
+
+BTN_COPIAR.addEventListener('click', () => {
+  TEXTO_ENTRADA.value = TEXTO_SALIDA.value;
+  TEXTO_SALIDA.value = "";
+});
+
+function encriptarTexto(texto){
+  const encriptaciones = {
+    'e' : 'enter',
+    'i' : 'imes',
+    'a' : 'ai',
+    'o' : 'ober',
+    'u' : 'ufat'
+  };
+  const textoEncriptado = texto.split('').map(char => encriptaciones[char] || char).join('');
+  return textoEncriptado;
 }
 
-function descencriptarboton() {
-  let textoentrada = document.getElementById("texto").value;
-  let textocadena = textoentrada.split(" ");
-  let palabracadena;
-  let cadenafinal = [];
-  let textosalida;
-
-  for (let i = 0; i < textocadena.length; i++) {
-    palabracadena = textocadena[i];
-    palabracadena = palabracadena.replace(/enter/g, "e");
-    palabracadena = palabracadena.replace(/imes/g, "i");
-    palabracadena = palabracadena.replace(/ai/g, "a");
-    palabracadena = palabracadena.replace(/ober/g, "o");
-    palabracadena = palabracadena.replace(/ufat/g, "u");
-    cadenafinal.push(palabracadena);
-  }
-  textosalida = cadenafinal.join(" ");
-
-  if (textosalida != null && textosalida != " ") {
-    document.getElementById("salida").style.display = "inline";
-    document.getElementById("copiar").style.visibility = "visible";
-    document.getElementById("salida").value = textosalida;
-  }
+function desencriptarTexto(textoEncriptado){
+  const desencriptado = {
+    'enter': 'e',
+    'imes': 'i',
+    'ai': 'a',
+    'ober': 'o',
+    'ufat': 'u'
+  };
+  const palabrasEncriptadas = Object.keys(desencriptado);
+  const palabrasDesencriptadas = Object.values(desencriptado);
+  const palabrasRegex = new RegExp(palabrasEncriptadas.join('|'), 'g');
+  const textoDesencriptado = textoEncriptado.replace(palabrasRegex, coincide => palabrasDesencriptadas[palabrasEncriptadas.indexOf(coincide)]);
+  return textoDesencriptado;
 }
 
-function copiarboton() {
-  const s = document.getElementById("salida").value;
-  document.getElementById("texto").value = s;
-  navigator.clipboard.writeText(s);
-  document.getElementById("salida").value = "";
+function mostrarResultado(texto) {
+  TEXTO_SALIDA.textContent = texto;
+  TEXTO_SALIDA.style.display = "inline";
+  BTN_COPIAR.style.display = "block";
+  BTN_COPIAR.style.visibility = "visible";
+  IMAGEN.style.display = "none";
+  TEXTO_NO_ENCONTRADO.remove();
+  INGRESE_TEXTO.remove();
 }
-
-function contieneMayusculas(texto) {
-  for (let i = 0; i < texto.length; i++) {
-    if (texto[i] === texto[i].toUpperCase().trim()) {
-      return true;
-    }
-  }
-  return false;
-}
-
-function contieneAcentos(texto) {
-  let acentos = texto.match(/[áéíóú]/gi);
-  if (acentos && acentos.length > 0) {
-    return true;
-  }
-  return false;
-}
-
-document.getElementById("encriptar").onclick = encriptarboton;
-document.getElementById("desencriptar").onclick = descencriptarboton;
-document.getElementById("copiar").onclick = copiarboton;

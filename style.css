@@ -171,6 +171,7 @@ footer p {
   color: #0a3871;
 }
 
+
 @media screen and (max-width: 768px) {
   main {
     display: flex;
